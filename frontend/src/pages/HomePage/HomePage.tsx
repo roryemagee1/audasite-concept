@@ -16,7 +16,7 @@ export default function HomePage(): JSX.Element {
     }
     testFunc();
     console.log(message);
-  }, [])
+  }, [message])
 
   const darkMode = useOutletContext();
   const logo = darkMode ? audasiteDark : audasite;
