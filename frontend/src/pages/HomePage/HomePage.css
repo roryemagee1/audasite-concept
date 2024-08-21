@@ -1,0 +1,33 @@
+.company-statement {
+  background-color: rgba(255, 255, 255, 100%);
+
+  position: absolute;
+  width: 100vw;
+  top: 75vh;
+}
+
+.company-caption-one {
+  color: black;
+  font-size: 1.5rem;
+  font-weight: 600;
+
+  padding: 15px 0 0 0;
+  margin: 0;
+}
+
+.company-caption-one > strong {
+  font-weight: 800;
+}
+
+.company-caption-two {
+  color: black;
+  font-size: 2rem;
+  font-weight: 500;
+
+  padding: 0 0 15px 0;
+  margin: 20px;
+}
+
+.company-caption-two > strong {
+  font-weight: 800;
+}

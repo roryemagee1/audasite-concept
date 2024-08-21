@@ -1,0 +1,65 @@
+.toggler {
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.toggler p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-family: "VT323", monospace;
+  font-style: normal;
+  margin: 0;
+}
+
+.toggler--slider {
+  width: 25px;
+  height: 13px;
+  background-color: #2B283A;
+  border-radius: 2rem;
+  margin-inline: 7px;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border: 1px solid black;
+  box-sizing: content-box;
+}
+
+div.on .toggler--slider {
+  border-color: white;
+  background-color: #F5F5F5;
+}
+
+.toggler--slider--circle {
+  height: 13px;
+  width: 13px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+div.on .toggler--slider--circle {
+  background-color: black;
+}
+
+.toggler--left {
+  color: #2B283A;
+}
+
+header.dark .toggler--left {
+  /* color: #918E9B; */
+  color: #FFFFFF;
+}
+
+.toggler--right {
+  /* color: #D5D4D8; */
+  color: #2B283A;
+}
+
+header.dark .toggler--right {
+  color: #FFFFFF;
+}
+
+div.on .toggler--slider {
+  justify-content: flex-end;
+}

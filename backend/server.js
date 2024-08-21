@@ -18,6 +18,7 @@ app.get('/api', (req, res) => {
   res.status(201).send({ message: "Server is on!" })
 })
 
+const __dirname = path.resolve();
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "/frontend/dist")));

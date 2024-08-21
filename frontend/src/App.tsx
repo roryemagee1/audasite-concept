@@ -1,25 +1,40 @@
-import { JSX, useState, useEffect } from 'react'
-import './App.css'
+import { JSX, useState } from 'react';
+import { Outlet } from 'react-router-dom';
+import './App.css';
+
+import Header from '@src/components/Header/Header'
+import Footer from '@src/components/Footer/Footer'
 
 function App(): JSX.Element {
-  const [ message, setMessage ] = useState<string>("");
-
-  useEffect(() => {
-    async function testFunc() {
-      const res = await fetch('/api');
-      const data = await res.json();
-      setMessage(data?.message || "Error");
+  const [ darkMode, setDarkMode ] = useState(false);
+  const [ flickerlessMode, setFlickerlessMode ] = useState(true);
+  
+  function toggleMode(mode: string) {
+    switch(mode) {
+      case "darkMode":
+        setDarkMode(prevMode => !prevMode);
+        break;
+      case "flickerlessMode":
+        setFlickerlessMode(prevMode => !prevMode);
+        break;
     }
-    testFunc();
-  }, [])
+  }
+
+  const background = darkMode ? "background--dark" : "background";
+  const crt = flickerlessMode ? "no-crt" : "crt";
 
   return (
-    <>
-      <div>
-        <h1>Hello, World!</h1>
-        <h1>{message}</h1>
-      </div>
-    </>
+    <div className={`${crt} ${background}`}>
+      <Header 
+        darkMode={darkMode}
+        flickerlessMode={flickerlessMode} 
+        toggleMode={toggleMode}
+      />
+      <main className="app">
+        <Outlet context={darkMode} />
+      </main>
+      <Footer />
+    </div>
   )
 }
 
