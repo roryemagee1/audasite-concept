@@ -1,3 +1,5 @@
+// NOTE: This is the last working commit of version-1.
+
 import { JSX, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import './App.css';
